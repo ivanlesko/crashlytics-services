@@ -48,7 +48,7 @@ class Service::Jira < Service::Base
       'project' => {'id' => project.id},
       'summary'     => payload[:title] + ' [Crashlytics]',
       'description' => issue_description,
-      'issuetype' => {'id' => '1'} } }
+      'issuetype' => {'name' => 'Bug'} } }
 
     # The Jira client raises an HTTPError if the response is not of the type Net::HTTPSuccess
     issue = client.Issue.build
